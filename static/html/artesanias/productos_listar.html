@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Lista porductos</title>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+  <!-- Link Swiper's CSS -->
+  
+  <link rel="stylesheet" href="/static/css/image-uploader.css">
+
+  <!-- Demo styles -->
+  
+</head>
+<body>
+<!--LISTADO_PRODUCTOS-->
+<div class="m-3 p-3" style="width: 520px;  float:left;">
+    <input type="hidden" value="{imagenes}" id="{id}" class="hidden_images">
+    <div class="card">
+        <div class="centrado card-header bg-success" >
+            <h5>{producto}</h5>
+        </div>
+        <div class="card-body shadow rounded"   >
+
+            <div class="row"  style="height:300px;" >
+                <div class="col-xs-12 col-sm-4">
+                    <h6>{descripcion}</h6>
+
+                    <!--slider-->
+                </div >
+                    
+                    <!----imagenes-->
+                    <div class="col-xs-12  col-sm-8 images" id="divImages_{id}">
+                        <div id="carousel{id}" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#carousel{id}" data-slide-to="0" class="active"></li>
+                                <li data-target="#carousel{id}" data-slide-to="1" class=></li>
+                                <li data-target="#carousel{id}" data-slide-to="2" class=></li>
+                            </ol>
+                            <div class="carousel-inner">
+                      
+                                <h6>{carousel}</h6>
+                       
+                            </div>
+                            
+                            <a class="carousel-control-prev" href="#carousel{id}" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carousel{id}" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12  col-sm-4 centrado">
+                    <strong>Precio unitario</strong><br> <h4>${precio}</h4> 
+                </div>
+                <div class="col-xs-12  col-sm-8 derecho">
+                    <strong>Cantidad: </strong><input type="number" id="{id}" value="1" size="2" />
+                    <a href="/artesanias/pedido/agregar"> <img src="/static/img/canasto.png" alt ="canasto">
+                    </a>
+                </div>
+            </div>
+             
+            
+        </div>
+    </div>
+</div>
+<!--LISTADO_PRODUCTOS-->
+
+
+</body>
+
+</html>
