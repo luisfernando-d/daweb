@@ -20,7 +20,7 @@ const STATIC_DIR = "C:/xampp/htdocs/daweb/static/";
 const WEB_DIR = "/";
 
 #--- Ruta de la vista por defecto
-const DEFAULT_VIEW = /*"/artesanias/clasificacion/listar",*/ "/artesanias/productos/listar";
+const DEFAULT_VIEW = /*"/artesanias/clasificacion/listar",*/ "/artesanias/clasificacion/listar";
 
 
 #--- Configuraciones para las sesiones
