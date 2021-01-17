@@ -9,7 +9,7 @@ class DataBase {
             $handler = new MySql ($connectionInfo);
         }
         else {
-            $handler = new Postgres ($connectionInfo);
+            //$handler = new Postgres ($connectionInfo);
         }
 
         self::$handlerDB = $handler;

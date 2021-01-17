@@ -41,6 +41,7 @@ CREATE TABLE productos
 , artesano_id BIGINT
 , precio DOUBLE 
 , existencias INT DEFAULT 0
+, imagenes TEXT
 , CONSTRAINT pkproductos PRIMARY KEY (id)
 , CONSTRAINT fkClasificaProducto FOREIGN KEY (clasificacion_id) 
   REFERENCES clasificacion (id)
