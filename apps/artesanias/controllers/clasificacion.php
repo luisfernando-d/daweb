@@ -1,5 +1,6 @@
 
 <?php
+
 importar('apps/artesanias/models/clasificacion');
 importar('apps/artesanias/views/clasificacion');
 importar('core/helpers/utilerias');
@@ -8,10 +9,9 @@ class ClasificacionController extends Controller  {
 
     public function agregar(){
         $sql = "SELECT * FROM clasificacion";
-        $data = $this->model->query($sql);
-
-        $this->view->agregar($data);
-    }
+       $data = $this->model->query($sql);
+       $this->view->agregar($data);
+   }
     public function editar($id=0){
         $sql= "SELECT  A.padre 
             FROM clasificacion A WHERE A.id=$id ";
@@ -31,7 +31,6 @@ class ClasificacionController extends Controller  {
                 FROM clasificacion C LEFT JOIN clasificacion P 
                 ON C.padre=P.id";
         $data = $this->model->query($sql);
-
        if (empty($formato)){
             $this->view->listar($data);
         } else if ($formato=="json"){
@@ -41,6 +40,7 @@ class ClasificacionController extends Controller  {
             $xml= Utilerias::toXml($data,"clasificaciones","clasificacion" );
             echo $xml;
         }
+        
     }
     
     

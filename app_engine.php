@@ -2,6 +2,7 @@
 <?php
 require_once 'config.php';
 importar('core/helpers/http');
+importar('core/helpers/utilerias');
 importar('core/helpers/template');
 importar('core/db/IPersistence');
 importar('core/db/DataBase');
