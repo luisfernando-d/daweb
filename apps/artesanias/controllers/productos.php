@@ -25,6 +25,7 @@ class ProductosController extends Controller  {
         $sql = "SELECT * FROM productos";
         $data = $this->model->query($sql);
         
+        
         if (strtolower($formato)=="json"){
             echo json_encode($data);
         }else if ($formato=="xml"){

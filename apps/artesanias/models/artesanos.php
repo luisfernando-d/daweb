@@ -14,4 +14,3 @@ class Artesanos extends DAO {
     } 
 }
 ?>
-<?php

@@ -9,4 +9,3 @@ class Clasificacion extends DAO {
     } 
 }
 ?>
-<?php

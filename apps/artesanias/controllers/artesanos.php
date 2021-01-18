@@ -3,6 +3,7 @@
 
 importar('apps/artesanias/models/artesanos');
 importar('apps/artesanias/views/artesanos');
+importar('core/helpers/utilerias');
 
 class ArtesanosController extends Controller  {
 
@@ -27,16 +28,20 @@ class ArtesanosController extends Controller  {
         $this->view->editar( $artesanos);
     }
     
-    public function listar(){
-       
-        $sql = "SELECT * FROM artesanos" ; 
-        
-            /*IFNULL(P.descripcion, 'Ninguno') as padre 
-                FROM roles C LEFT JOIN roles P 
-                ON C.padre=P.id";*/
-
+    public function listar($formato){
+        $sql = "SELECT * FROM artesanos";
         $data = $this->model->query($sql);
-        $this->view->listar($data);
+        
+       if (empty($formato)){
+            $this->view->listar($data);
+        } else if ($formato=="json"){
+            print(json_encode($data));
+        }
+        else if ($formato=="xml"){
+            $xml= Utilerias::toXml($data,"artesanos","artesano" );
+            echo $xml;
+        }
+        
     }
     
 

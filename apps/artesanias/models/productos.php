@@ -14,5 +14,5 @@ class Productos extends DAO {
     } 
 }
 ?>
-<?php
+
 

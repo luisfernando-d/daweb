@@ -31,6 +31,7 @@ class ClasificacionController extends Controller  {
                 FROM clasificacion C LEFT JOIN clasificacion P 
                 ON C.padre=P.id";
         $data = $this->model->query($sql);
+        
        if (empty($formato)){
             $this->view->listar($data);
         } else if ($formato=="json"){
