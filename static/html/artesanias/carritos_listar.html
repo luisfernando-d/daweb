@@ -1,0 +1,127 @@
+
+<div class="mx-auto m-3 p-3">
+    <div class="card">
+        <div class="card-header bg-success">
+             
+   
+            <h5>Carrito de compra </h5>
+        </div>
+        <div class="card-body shadow rounded" >
+            <table class="table table-hover table-bordered" >
+                <caption>Pág. 1 </caption>
+                <thead class="thead-light ">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <!--<th scope="col">PRODUCTO_ID</th>-->
+                        <th scope="col">PRODUCTO</th>
+                        <th scope="col">CANTIDAD</th>
+                        <th scope="col">PRECIO VENTA</th>
+                        <th scope="col">SUBTOTAL</th>
+                        
+                        <th scope="col" colspan="2">ACCION</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--LISTADO_CARRITOS-->
+                    <tr>
+                        <td>{id}</td>
+                        <!--<td>{producto_id}</td>-->
+                        <td>{producto}</td>
+                        <td>{cantidad}</td>
+                        <td>{precioventa}</td>
+                        <td>{subtotal}</td>
+                        <td>
+                            <a href="/artesanias/carritos/editar/{id} ">
+                                <img src="/static/img/edit.png" width="48" alt="edit" title="Editar el elemento actual "
+                                />
+                            </a> 
+                        </td>
+                        <td>                              
+                            <a href="/artesanias/carritos/eliminar/{id} "
+                            onclick="return confirm( 'Esta seguro de Borrar {producto}') ">
+                                <img src="/static/img/delete.png" width="48" alt="delete" title="Borrar el elemento actual "/>
+                            </a> 
+                        </td>
+                    </tr>
+                    <!--LISTADO_CARRITOS-->
+                </tbody>
+            </table>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mx-auto m-3 p-3">
+    <div class="card" style="width: 500px;">
+        <div class="centrado card-header bg-success" >
+            <h5>Agregar productos</h5>
+        </div>
+        <div class="card-body shadow rounded" >
+            
+            <form action="/artesanias/productos/guardar" 
+                method="POST" enctype="multipart/form-data">
+
+                <div class="row">
+                    <div class="col-sm-4">
+                        <label for="producto">Producto: </label>
+                    </div>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" 
+                        name="producto" id="producto" maxlength="100"
+                        required></input>
+                    </div>
+                </div>
+            
+                <div class="row">
+                    <div class="col-sm-4">
+                        <label for="cliente_id">Cliente:</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <select name="cliente_id" id="cliente_id">
+                            <!--LISTADO_CLIENTES-->
+                            <option value="{id}">{nombreorazonsocial}</option>
+                            <!--LISTADO_CLIENTES-->
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4">
+                                          <h6 for="producto" >Forma de pago  : </h6>
+                                      </div>
+                                      <div class="col-sm-8">
+                                        <select name="artesano_id" id="artesano_id">
+                                            
+                                            <option value="targeta">tarjeta</option>
+                                            <option value="credito">credito</option>
+                                            <option value="contado con debito">contado</option>
+                                            <option value="a contado con targeta de credito">contado</option>
+                                            
+                                        </select>
+                                    </div> 
+                  </div>
+
+                  <div class="row">
+                    <div class="col-sm-4">
+                                          <h6 for="domicilioentrega" >Domicilio de entrega : </h6>
+                                      </div>
+                                      <div class="row">
+                                        <input type="text" class="form-control" 
+                                        name="domicilioentrega" id="domicilioentrega" 
+                                        required>
+                                    </div> 
+                  </div>
+
+                <div style="text-align: center; padding: 10px;">
+                    <input type="submit" class="btn btn-primary" value="Guardar">
+                    
+                </div>
+                
+            </form>
+        </div>
+    </div>
+</div>
+
+
+

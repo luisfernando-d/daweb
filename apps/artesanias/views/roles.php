@@ -23,9 +23,8 @@ class RolesView  {
     public function editar($roles){
         $str = file_get_contents(
             STATIC_DIR . "html/artesanias/roles_editar.html"); 
-        /*$html = Template($str)->render_regex('LISTADO_ROLES', $list);*/
         $html = Template($str)->render($roles);
-        print Template('Agregar roles')->show($html);
+        print Template('Agregar roles 1233')->show($html);
     } 
 
 }

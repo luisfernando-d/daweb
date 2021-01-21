@@ -11,12 +11,21 @@ header {
 }
 .card{
   text-align: center;
+
  
-width : 100%;
+width : 135%;
 height: auto;
 }
+.cardimg{
+  margin: auto;
+text-align: center;
+width : 135%;
+height: auto;
+
+
+}
   .alert .header {
-    background-color: #16851c;
+    background-color: #0c6d11;
     margin: auto;
     color: #fff;
     width: 80%;
@@ -67,9 +76,16 @@ height: auto;
     height: 70px;
     width: 70px;
     
-    background-color: rgba(113, 192, 82, 0.397);
+    background-color: rgba(51, 109, 29, 0.76);
     background-size: 70%, 70%;
 }
+.row{
+  align-content: center;
+}
+
+.navbar-collapse { text-align: center; }
+
+
 
 
  

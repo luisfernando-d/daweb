@@ -65,6 +65,7 @@ CREATE TABLE clientes
 , contacto VARCHAR (100)
 , CONSTRAINT pkClientes PRIMARY KEY (id)
 ); 
+
 CREATE TABLE pedidos 
 ( id BIGINT AUTO_INCREMENT
 , fecha DATETIME  NOT NULL 
@@ -75,6 +76,42 @@ CREATE TABLE pedidos
 , CONSTRAINT fkClientePedido FOREIGN KEY (cliente_id)
   REFERENCES clientes (id)
 );
+
+
+CREATE TABLE pedidos 
+( id BIGINT AUTO_INCREMENT
+, producto_id BIGINT
+, fecha DATETIME  NOT NULL 
+, cliente_id BIGINT 
+, cantidad INT 
+, precioventa DOUBLE
+, formapago VARCHAR (50)
+, domicilioentrega VARCHAR (100) 
+, CONSTRAINT pkPedidos PRIMARY KEY (id)
+, CONSTRAINT fkClientePedido FOREIGN KEY (cliente_id)
+  REFERENCES clientes (id)
+);
+
+CREATE TABLE carritos 
+( id BIGINT  AUTO_INCREMENT
+, producto VARCHAR (100) NOT NULL
+, cantidad  INT
+, precioventa DOUBLE 
+, subtotal DOUBLE 
+, CONSTRAINT pkcarrito PRIMARY KEY (id)
+);
+
+CREATE TABLE carrito 
+( id BIGINT  AUTO_INCREMENT
+, producto_id BIGINT
+, producto VARCHAR (100) NOT NULL
+, cantidad INT 
+, precioventa DOUBLE  
+, CONSTRAINT pkcarrito PRIMARY KEY (id)
+, CONSTRAINT fkProductoC FOREIGN KEY (producto_id) 
+  REFERENCES productos (id)
+);
+
 CREATE TABLE detallepedidos 
 ( id BIGINT  AUTO_INCREMENT
 , producto_id BIGINT
@@ -88,6 +125,7 @@ CREATE TABLE detallepedidos
 , CONSTRAINT fkPedidoDP FOREIGN KEY (pedido_id)  
   REFERENCES pedidos (id)
 );
+
 CREATE TABLE usuarios
 ( id BIGINT AUTO_INCREMENT
 , nombrecompleto VARCHAR (100) NOT NULL
@@ -138,3 +176,12 @@ VALUES
 INSERT INTO roles (descripcion)
 VALUES 
 ('administrador'), ('contador'), ('gerente'), ('vendedor');
+
+INSERT INTO carrito (producto_id,producto,cantidad,precioventa)
+VALUES ("9","colibri","9","200");
+INSERT INTO carrito (producto_id,producto,cantidad,precioventa)
+VALUES ("10","blusa","9","100");
+
+SELECT * FROM clasificacion ( clasificaciones = $this->model->query($sql);
+        $sql = "SELECT id, CONCAT(primerapellido,' ', segundoapellido, ' ',
+            nombres) as nombres FROM artesanos

@@ -13,6 +13,7 @@ class RolesController extends Controller  {
 
         $this->view->agregar($data);
     }
+    
     public function editar($id=0){
         $id= intval($id);
 

@@ -1,47 +1,25 @@
-
 <div class="mx-auto m-3 p-3">
     <div class="card" style="width: 500px;">
         <div class="centrado card-header bg-success " >
-            <h5>Agregar artesanos</h5>
+            <h5>Agregar clientes</h5>
         </div>
+        
 <div class="card-body shadow rounded" >
-            <form action="/artesanias/artesanos/guardar" 
+            <form action="/artesanias/clientes/guardar" 
                 method="POST">
 
                 <div class="row">
 
                     <div class="col-sm-4">
-                         <label for="nombres">Nombre: </label>
+                         <label for="nombreorazonsocial">Razon social o Nombre: </label>
                     </div>
 
                     <div class="col-sm-8">
                         <input type="text" class="form-control" 
-                        name="nombres" id="nombres"
+                        name="nombreorazonsocial" id="nombreorazonsocial"
                         required maxlength="50" >
                     </div>
                     
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col-sm-4">
-                        <label for="primerapellido">Primer Apellido: </label>
-                    </div>
-                <div class="col-sm-8">
-                    <input type="text" class="form-control" 
-                    name="primerapellido" id="primerapellido"
-                    required maxlength="50" >
-                </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col-sm-4">
-                        <label for="segundoapellido">Segundo Apellido: </label>
-                    </div>
-                <div class="col-sm-8">
-                    <input type="text" class="form-control" 
-                    name="segundoapellido" id="segundoapellido"
-                    required maxlength="50" >
-                </div>
                 </div>
                 <br>
                 <div class="row">
@@ -70,19 +48,29 @@
                     <div class="col-sm-4">
                         <label for="correo">Correo: </label>
                     </div>
-                    <div class="col-sm-8">
+                <div class="col-sm-8">
                     <input type="text" class="form-control" 
                     name="correo" id="correo"
                     required maxlength="50" >
+                </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <label for="contacto">Contacto: </label>
                     </div>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" 
+                    name="contacto" id="contacto"
+                    required maxlength="50" >
+                </div>
                 </div>
                 <br>
                 <br>
                 <div style="text-align: center;">
-                    <input type="submit" class="btn btn-primary" value="Guardar">
-                    
+                    <input type="submit" class="btn btn-outline-primary" value="Guardar">
                 </div>
-   </form>
+            </form>
         </div>
     </div>
 </div>

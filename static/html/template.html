@@ -3,6 +3,7 @@
 
 <head>
     <title>Desarrollo de Aplicaciones Web</title>
+    
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -62,18 +63,70 @@
                 </ul>
             </div>
         </div>
+        <link rel="stylesheet" href="/static/css/estilo_menu_2.css">
+          <nav class="navegacion">
+			<ul class="menu">
+				<li><a href="#">Inicio</a></li>
+                <li><a href="/artesanias/productos/listar">Producto</a>
+                    <ul class="submenu">
+						<li><a href="/artesanias/productos/agregar">Agregar</a></li>
+						
+                    </ul>
+                </li>
+                
+				<li><a href="/artesanias/clientes/listar">Cliente</a>
+					<ul class="submenu">
+						<li><a href="/artesanias/clientes/agregar">Agregar</a></li>
+						
+					</ul>
+                </li>
+                <li><a href="/artesanias/roles/listar">Roles</a>
+					<ul class="submenu">
+						<li><a href="/artesanias/roles/agregar">Agregar</a></li>
+						
+					</ul>
+				</li>
+                <li><a href="/artesanias/artesanos/listar">Artesanos</a>
+                    <ul class="submenu">
+						<li><a href="/artesanias/artesanos/agregar">Agregar</a></li>
+						
+                    </ul>
+                </li>
+                <li><a href="/artesanias/clasificacion/listar">Clasificacion</a>
+					<ul class="submenu">
+						<li><a href="/artesanias/clasificacion/agregar">Agregar</a></li>
+					</ul>
+                </li>
+                <li><a href="/artesanias/pedidos/listar">Pedido</a>
+					<ul class="submenu">
+						<li><a href="/artesanias/pedidos/agregar">Agregar</a></li>
+					</ul>
+                </li>
+                <li><a href="/artesanias/carrito/listar">Carrito</a>
+					<ul class="submenu">
+						<li><a href="/artesanias/carrito/agregar">Agregar</a></li>
+					</ul>
+                </li>
+                <li><a href="/artesanias/carritos/listar">Carritos</a>
+					<ul class="submenu">
+						<li><a href="/artesanias/carritos/agregar">Agregar</a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+        
     </header>
 
     <div class="container-fluid">
         <div class="row">
-            <nav class="col-sm-3">
-                Menu-Navegacion
-            </nav>
+            
             <section class="col-sm-9">
                 {CONTENIDO}
             </section>
         </div>
     </div>
+
+    
      <!--- Div para los mensajes de alerta -->
      <div id="divAlert" class="h-100 modal">
         <div class="row h-100 justify-content-center align-items-center">

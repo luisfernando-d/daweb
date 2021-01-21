@@ -18,7 +18,19 @@ class ProductosController extends Controller  {
     }
 
     public function editar($id=0){
-        
+        $id= intval($id);
+
+        $producto = $this->model->getById($id);
+
+        $this->view->editar( $producto);
+    }
+
+    public function enviar($id=0){
+        $id= intval($id);
+
+        $producto = $this->model->getById($id);
+
+        $this->view->enviar( $producto);
     }
 
     public function listar($formato=""){
@@ -54,6 +66,7 @@ class ProductosController extends Controller  {
            exit;
        }
 
+
        //--- validar imágenes
        $permitidos    = array("jpg" => "image/jpg", "jpeg" => "image/jpeg", "png" => "image/png");
        $imagenes      = $_FILES['images'];
@@ -73,7 +86,11 @@ class ProductosController extends Controller  {
                 Mensajes::show ("El tamaño del archivo es demasiado grande");
                 exit;
             }
-     
+            $maxnum = 3;
+            if($totalElements > $maxnum) {
+                Mensajes::show ("Solo se permiten un maximo de 3 imagenes");
+                exit;
+            }
         }
 
        //--- asociar al modelo

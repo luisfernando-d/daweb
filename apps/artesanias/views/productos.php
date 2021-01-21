@@ -2,13 +2,15 @@
 
 class ProductosView  {
 
-    public function agregar($artesanos=[], $clasificacion=[]){
+    public function agregar($artesanos=[], $clasificacion=[], $productos=[]){
         $str = file_get_contents(
             STATIC_DIR . "html/artesanias/productos_agregar.html"); 
         $html = Template($str)->render_regex('LISTADO_ARTESANOS', $artesanos);
         $html = Template($html)->render_regex('LISTADO_CLASIFICACION', $clasificacion);
+        $html = Template($html)->render_regex('LISTADO_PRODUCTOS', $productos);
         print Template('Agregar productos')->show($html);
     } 
+    
     public function listar($list=array()) {
         $carouselhtml="";
      
@@ -45,16 +47,14 @@ class ProductosView  {
         print Template('Listado de productos')->show($html);
     }
 
-    
-
-
-    public function editar($list=[], $productos){
+    public function editar($lis=[],$productos){
         $str = file_get_contents(
-            STATIC_DIR . "html/artesanias/productos_editar.html"); 
-        $html = Template($str)->render_regex('LISTADO_PRODUCTOS', $list);
-        $html = Template($html)->render($productos);
-        print Template('Editar productos')->show($html);
-    } 
+            STATIC_DIR . "html/artesanias/carritos_agregar.html"); 
+            $html = Template($str)->render_regex('LISTADO_CARRITOS', $list); 
+        $html = Template($str)->render($productos);
+        print Template('carrito')->show($html);
+    }
+    
 
 }
 

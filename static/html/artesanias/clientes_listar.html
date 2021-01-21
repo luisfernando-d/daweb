@@ -3,7 +3,7 @@
         <div class="card-header bg-success">
              
    
-            <h5>Listado de Artesanos </h5>
+            <h5>Listado de Clientes </h5>
         </div>
         <div class="card-body shadow rounded" >
             <table class="table table-hover table-bordered" >
@@ -11,41 +11,39 @@
                 <thead class="thead-light ">
                     <tr>
                         <th scope="col">ID</th>
-                        <th scope="col">NOMBRE</th>
-                        <th scope="col">1 APELLIDO</th>
-                        <th scope="col">2 APELLIDO</th>
+                        <th scope="col">RAZONSOCIALONOMBRE</th>
                         <th scope="col">DOMICILIO</th>
                         <th scope="col">TELEFONO</th>
                         <th scope="col">CORREO</th>
-                        
-                        <!--<th scope="col">DEPENDE DE</th>-->
+                        <th scope="col">CONTACTO</th>
                         <th scope="col" colspan="2">ACCION</th>
-                    </tr>
+
+                        
+                        
                 </thead>
                 <tbody>
-                    <!--LISTADO_ARTESANOS-->
+                    <!--LISTADO_CLIENTES-->
                     <tr>
                         <td>{id}</td>
-                        <td>{nombres}</td>
-                        <td>{primerapellido}</td>
-                        <td>{segundoapellido}</td>
+                        <td>{nombreorazonsocial}</td>
                         <td>{domicilio}</td>
                         <td>{telefono}</td>
                         <td>{correo}</td>
+                        <td>{contacto}</td>
                         <td>
-                            <a href="/artesanias/artesanos/editar/{id} ">
+                            <a href="/artesanias/clientes/editar/{id} ">
                                 <img src="/static/img/edit.png" width="48" alt="edit" title="Editar el elemento actual "/>
                             </a> 
                         </td>
                         <td>                              
-                            <a href="/artesanias/artesanos/eliminar/{id} "
-                            onclick="return confirm( 'Esta seguro de Borrar {nombres}') ">
+                            <a href="/artesanias/clientes/eliminar/{id} "
+                            onclick="return confirm( 'Esta seguro de Borrar {nombreorazonsocial}') ">
                                 <img src="/static/img/delete.png" width="48" alt="delete" title="Borrar el elemento actual "/>
                             </a> 
                         </td>
                         
                     </tr>
-                    <!--LISTADO_ARTESANOS-->
+                    <!--LISTADO_CLIENTES-->
                 </tbody>
             </table>
             </div>
