@@ -101,16 +101,6 @@ CREATE TABLE carritos
 , CONSTRAINT pkcarrito PRIMARY KEY (id)
 );
 
-CREATE TABLE carrito 
-( id BIGINT  AUTO_INCREMENT
-, producto_id BIGINT
-, producto VARCHAR (100) NOT NULL
-, cantidad INT 
-, precioventa DOUBLE  
-, CONSTRAINT pkcarrito PRIMARY KEY (id)
-, CONSTRAINT fkProductoC FOREIGN KEY (producto_id) 
-  REFERENCES productos (id)
-);
 
 CREATE TABLE detallepedidos 
 ( id BIGINT  AUTO_INCREMENT

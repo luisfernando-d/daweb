@@ -7,12 +7,12 @@ importar('core/helpers/utilerias');
 class CarritosController extends Controller  {
 
     public function agregar(){
-        $sql = "SELECT * FROM clientes";
-        $clientes = $this->model->query($sql);
+        /*$sql = "SELECT * FROM clientes";
+        $clientes = $this->model->query($sql);*/
         $sql = "SELECT * FROM carritos";
         $data = $this->model->query($sql);
 
-        $this->view->agregar($clientes,$data);
+        $this->view->agregar($data);
     }
 
 
